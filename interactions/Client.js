@@ -2,12 +2,12 @@ const EventEmitter = require('events');
 const CommandManager = require('./CommandManager');
 const CommandInteraction = require('./CommandInteraction');
 const MessageComponentInteraction = require('./MessageComponentInteraction');
-const ButtonCollector = require('./ButtonCollector');
+const ComponentCollector = require('./ComponentCollector');
 const fetch = require('node-fetch');
 const nacl = require('tweetnacl');
 
 async function request(method, route, options) {
-  let url = 'https://discord.com/api' + (options && options.version === null ? '' : '/v8') + route;
+  let url = 'https://discord.com/api' + (options && options.version === null ? '' : '/v9') + route;
   let data = {method};
   if (options) {
     data.headers = options.headers || {};
@@ -34,6 +34,7 @@ class Client extends EventEmitter {
     return (req, res) => {
       const signature = req.header('X-Signature-Ed25519');
       const timestamp = req.header('X-Signature-Timestamp');
+      if (!signature || !timestamp) return res.sendStatus(401);
       let body = '';
       req.on('data', chunk => body += chunk);
       req.on('end', () => {
@@ -99,8 +100,8 @@ class Client extends EventEmitter {
 
   commands = new CommandManager(this);
 
-  createButtonCollector(filter, options) {
-    return new ButtonCollector(this, filter, options);
+  createComponentCollector(options) {
+    return new ComponentCollector(this, options);
   }
 }
 

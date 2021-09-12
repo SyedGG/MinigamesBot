@@ -1,0 +1,224 @@
+{
+  "files": {
+    "ApplicationCommand.js": [
+      {
+        "id": "5315d25b-901f-448e-bfca-ea0c36a0aae2",
+        "line": 1,
+        "version": 3497,
+        "index": 0
+      },
+      {
+        "id": "0af377be-44ac-4945-841b-8a579d40b10e",
+        "line": 5,
+        "version": 3497,
+        "index": 65
+      },
+      {
+        "id": "e698f033-c383-4344-a763-2ce1a53f3e6c",
+        "line": 32,
+        "version": 3497,
+        "index": 1095
+      },
+      {
+        "id": "b8a8f3e6-e711-417a-abba-3204c8970d9f",
+        "line": 35,
+        "version": 3497,
+        "index": 1246
+      }
+    ],
+    "MessageComponent.js": [
+      {
+        "id": "6b9a6bc8-de0c-408b-b6f5-f8cff0f81350",
+        "line": 5,
+        "version": 540,
+        "index": 283
+      }
+    ],
+    "README.md": [
+      {
+        "id": "d701a48f-53e3-4b87-acc8-3ee51cb1be51",
+        "line": 4,
+        "version": 708,
+        "index": 29
+      }
+    ],
+    "commands/2048": [
+      {
+        "id": "6a80fbd0-d162-4b29-ba66-aa82b35041bc",
+        "line": 1,
+        "version": 0,
+        "index": 0
+      }
+    ],
+    "commands/2048.js": [
+      {
+        "id": "ba4a7a40-ef3e-4097-8014-807b9c528cdb",
+        "line": 38,
+        "version": 549,
+        "index": 831
+      },
+      {
+        "id": "6fa12901-6b4f-4214-a5ac-c478cd7a5fa5",
+        "line": 56,
+        "version": 549,
+        "index": 1648
+      },
+      {
+        "id": "6a346f91-2205-47b8-8b2f-d5ebe737c43a",
+        "line": 65,
+        "version": 549,
+        "index": 1899
+      },
+      {
+        "id": "03ebaea2-dcb2-48ae-838d-a56fb0284f4c",
+        "line": 66,
+        "version": 572,
+        "index": 1950
+      }
+    ],
+    "commands/eval.js": [
+      {
+        "id": "d3b5060c-3c3f-48d6-bc72-31a133ac92e5",
+        "line": 3,
+        "version": 106,
+        "index": 45
+      },
+      {
+        "id": "b35a1a1b-252c-40d7-a109-5580731e0728",
+        "line": 3,
+        "version": 106,
+        "index": 45
+      },
+      {
+        "id": "e45dd945-2ab1-48ee-acf3-c5945aaa28c6",
+        "line": 3,
+        "version": 106,
+        "index": 45
+      },
+      {
+        "id": "dd2e79c5-9171-42a0-9171-5b270af6aafd",
+        "line": 50,
+        "version": 106,
+        "index": 1545
+      },
+      {
+        "id": "c65d68d0-a3e0-4721-9dc5-be3b37dde358",
+        "line": 50,
+        "version": 106,
+        "index": 2384
+      },
+      {
+        "id": "e5b62d64-6f5d-4f1d-a263-f646470842f0",
+        "line": 50,
+        "version": 106,
+        "index": 2384
+      },
+      {
+        "id": "a71c5580-1286-4371-84e8-c8f0118e374e",
+        "line": 50,
+        "version": 106,
+        "index": 2480
+      },
+      {
+        "id": "65866dd7-a0a8-4112-999a-e56188b95663",
+        "line": 50,
+        "version": 106,
+        "index": 1546
+      }
+    ],
+    "commands/tictactoe.js": [
+      {
+        "id": "75a67063-569a-4e47-9de0-455169dab816",
+        "line": 11,
+        "version": 123,
+        "index": 235
+      },
+      {
+        "id": "84841ed7-f203-456c-bf50-1c540fbc83ed",
+        "line": 35,
+        "version": 156,
+        "index": 1669
+      }
+    ],
+    "index.js": [
+      {
+        "id": "1532de6c-8284-432e-8a96-bdcc1f000fc1",
+        "line": 2,
+        "version": 4239,
+        "index": 36
+      },
+      {
+        "id": "315466e6-4598-433d-9a28-6715a72a63c7",
+        "line": 4,
+        "version": 4241,
+        "index": 57
+      },
+      {
+        "id": "c338e9d1-fe34-40a9-8805-d2aaaa864ea5",
+        "line": 24,
+        "version": 3902,
+        "index": 681
+      },
+      {
+        "id": "77f438c2-69a4-42ba-a12a-36917be897eb",
+        "line": 32,
+        "version": 3902,
+        "index": 871
+      },
+      {
+        "id": "2aada0ee-e370-46ca-b985-57cd703e7cfc",
+        "line": 48,
+        "version": 4183,
+        "index": 1248
+      },
+      {
+        "id": "210119ac-68c5-4b1d-9201-81ed4e319da7",
+        "line": 49,
+        "version": 4175,
+        "index": 1314
+      },
+      {
+        "id": "92eeb027-3bfb-42ec-9d21-8990f63258cd",
+        "line": 50,
+        "version": 4741,
+        "index": 1338
+      }
+    ],
+    "interactions/ButtonCollector.js": [
+      {
+        "id": "f1f2281d-7c44-4a55-ae0d-8340d98fc6f6",
+        "line": 33,
+        "version": 1373,
+        "index": 941
+      },
+      {
+        "id": "92635353-4285-47bc-9515-fc3140e81430",
+        "line": 36,
+        "version": 1373,
+        "index": 1069
+      }
+    ],
+    "interactions/ComponentCollector.js": [
+      {
+        "id": "3ef7b4a6-0b12-424a-bc31-eeb57ee9189a",
+        "line": 36,
+        "version": 647,
+        "index": 1340
+      }
+    ],
+    "interactions/MessageComponentInteraction.js": [
+      {
+        "id": "40d83f25-41f5-42d7-97ab-973ad763a976",
+        "line": 5,
+        "version": 160,
+        "index": 173
+      },
+      {
+        "id": "db24ef6c-81d8-40f2-bee5-4b25c7dd059c",
+        "line": 7,
+        "version": 202,
+        "index": 231
+      }
+    ]
+  }
+}

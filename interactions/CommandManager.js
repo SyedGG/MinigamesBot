@@ -10,6 +10,10 @@ function getLocation(manager, guildID) {
   return guildID == null ? path : path.guilds(guildID);
 }
 
+function required() {
+  throw new Error('Insufficient arguments supplied');
+}
+
 class CommandManager {
   constructor(client) {
     this.client = client;
@@ -22,7 +26,7 @@ class CommandManager {
     return cmds;
   }
 
-  async create(guildID, data) {
+  async create(guildID, data = required()) {
     let cmd = await getLocation(this, guildID).commands.post({
       data,
       headers: await getHeaders(this)
@@ -31,13 +35,13 @@ class CommandManager {
     return cmd;
   }
 
-  async fetch(guildID, commandID) {
+  async fetch(guildID, commandID = required()) {
     let cmd = await getLocation(this, guildID).commands(commandID).get({headers: await getHeaders(this)});
     this.cache.set(cmd.id, cmd);
     return cmd;
   }
 
-  async edit(guildID, commandID, data) {
+  async edit(guildID, commandID = required(), data = required()) {
     let cmd = await getLocation(this, guildID).commands(commandID).patch({
       data,
       headers: await getHeaders(this)
@@ -46,19 +50,19 @@ class CommandManager {
     return cmd;
   }
 
-  async delete(guildID, commandID) {
+  async delete(guildID, commandID = required()) {
     let cmd = await getLocation(this, guildID).commands(commandID).delete({headers: await getHeaders(this)});
     this.cache.delete(commandID);
   }
 
-  async bulkOverwrite(guildID, data) {
+  async bulkOverwrite(guildID, data = required()) {
     let cmds = await getLocation(this, guildID).commands.put({
       data,
       headers: await getHeaders(this)
     })
   }
 
-  async updatePermissions(guildID, commandID, permissions) {
+  async updatePermissions(guildID = required(), commandID = required(), permissions = required()) {
     return getLocation(this, guildID).commands(commandID).permissions.put({
       data: {permissions},
       headers: await getHeaders(this)

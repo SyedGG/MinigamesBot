@@ -1,37 +1,52 @@
-const util = require('util');
+
+const config = require('./config');
 const fetch = require('node-fetch');
+const fs = require('fs');
+const port = process.env.PORT || 3000;
+const util = require('util');
+
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
+
 const Discord = require('./interactions');
 const client = new Discord.Client({
-  applicationID: '851602059072634880',
-  publicKey: '0b17918836935741f606afd7e863844cc96f816c8910eb0710bce4588aae9871',
+  applicationID: config.APPLICATION_ID,
+  publicKey: config.PUBLIC_KEY,
   accessToken: process.env.accessToken
 });
+const commands = fs.readdirSync('commands').map(file => require(`./commands/${file}`));
 
-const interactionHandlers = {
-  ApplicationCommand: require('./ApplicationCommand.js'),
-  MessageComponent: require('./MessageComponent.js'),
-  reload(mod) {
-    delete require.cache[require.resolve(`./${mod}.js`)];
-    this[mod] = require(`./${mod}.js`);
-  }
+function reload(mod) {
+  delete require.cache[require.resolve(mod)];
+  return require(mod);
 }
-/*
-*/
-client.on('interaction', cmd => {
-  if (cmd.type === 2) {
-    if (cmd.commandName === 'reload') {
-      interactionHandlers.reload(cmd.options.get('module').value);
-      cmd.reply(`Reloaded ${cmd.options.get('module').value}`);
-    } else interactionHandlers.ApplicationCommand(cmd);
+
+process.stdin.on('data', cmd => {
+  let ops = {};
+  try {
+    console.dir(global.$_ = eval(cmd.toString().trim()), ops);
+  } catch(err) {
+    console.error(err);
   }
-  if (cmd.type === 3) interactionHandlers.MessageComponent(cmd);
+})
+
+client.on('interaction', interaction => {
+  if (interaction.type === 2) {
+    const cmd = commands.find(cmd => cmd.name === interaction.commandName);
+    if (!cmd) return interaction.reply('This command has not been implemented yet. Please try later.');
+    return cmd.run(interaction);
+  }
+  if (interaction.type === 3)
+    setTimeout(() => interaction.replied || interaction.deferred || interaction.reply({
+      content: 'This button was not handled on time.',
+      ephemeral: true
+    }), 2500);
 });
+
 
 app.post('/api/interactions', client.handleRequest());
 
+// For testing
 app.post('/test', (req, res) => {
   let body = '';
   req.on('data', chunk => {

@@ -4,6 +4,6 @@ module.exports = {
   MessageComponentInteraction: require('./MessageComponentInteraction'),
   CommandManager: require('./CommandManager'),
   InteractionResponses: require('./InteractionResponses'),
-  ButtonCollector: require('./ButtonCollector'),
+  ComponentCollector: require('./ComponentCollector'),
   Collection: require('@discordjs/collection')
 };
