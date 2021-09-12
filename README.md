@@ -8,8 +8,3 @@ Current commands:
 * /**tictactoe {opponent}** | Play Tic-tac-toe against someone else!
 * /**2048** | Join the numbers and try to get the 2048 tile!
 * /**invite** | Get a link to be able to add Minigames to your own server.
-
----
-
-Self hosting
-------------
